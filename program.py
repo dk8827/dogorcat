@@ -40,10 +40,10 @@ test_set = test_datagen.flow_from_directory(
     class_mode='binary')
 
 # Train the model
-model.fit_generator(
+model.fit(
     train_set,
-    steps_per_epoch=200,  # Adjust based on your dataset
-    epochs=10,  # Can be changed as needed
+    steps_per_epoch=100,  # Adjust based on your dataset
+    epochs=5,  # Can be changed as needed
     validation_data=test_set,
     validation_steps=2000)  # Adjust based on your dataset
 
@@ -62,4 +62,4 @@ def predict_image(image_path):
         return 'cat'
 
 # Example of predicting a new image
-print(predict_image('dog.jpg'))  # Replace with your image path
+print(predict_image('input.jpg'))  # Replace with your image path
